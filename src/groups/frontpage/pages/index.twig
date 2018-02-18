@@ -1,0 +1,27 @@
+{% extends "tipicss::/templates/default/index.twig" %}
+
+{% block head %}
+    <link rel="preload" href="/groups/frontpage/stylesheets/index.css" as="style" onload="null;this.rel='stylesheet'" />
+
+    <noscript>
+        <link rel="stylesheet" href="/groups/frontpage/stylesheets/index.css" />
+    </noscript>
+
+
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block foot %}
+    <script src="/main/javascripts/index.js"></script>
+    <script src="/templates/default/javascripts/index.js"></script>
+    <script src="/groups/frontpage/javascripts/index.js"></script>
+{% endblock %}

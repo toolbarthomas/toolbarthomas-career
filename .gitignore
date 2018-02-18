@@ -1,0 +1,12 @@
+/dist
+
+node_modules/
+bower_components/
+.sass-cache/
+
+*.map
+*.log
+
+.env
+
+_spritesmith.scss

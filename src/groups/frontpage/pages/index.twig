@@ -1,12 +1,14 @@
 {% extends "tipicss::/templates/default/index.twig" %}
 
 {% block head %}
-    <link rel="preload" href="/groups/frontpage/stylesheets/index.css" as="style" onload="null;this.rel='stylesheet'" />
 
-    <noscript>
-        <link rel="stylesheet" href="/groups/frontpage/stylesheets/index.css" />
-    </noscript>
-
+    {% include "tipicss_packages::/tipicss-core/partials/fg-loadcss.twig" with {
+        stylesheets: [
+            '/templates/default/stylesheets/index.css',
+            '/groups/frontpage/stylesheets/index.css',
+        ],
+        include_javascript: true
+    } %}
 
 {% endblock %}
 
@@ -14,37 +16,13 @@
 
 {% block content %}
 
-    <div class="splash-blocks">
-        <section class="splash-blocks_item">
-            <div class="splash-blocks_item_wrapper">
-                <h1 class="display1">Gegroet vreemde.</h1>
-                <hr>
-                <p class="lead">Maak kennis</p>
+    <div class="valign">
+        <div class="valign__body">
+            <div class="wrapper">
+                <h1 class="display1">Welcome to Tipicss</h1>
+                <p class="lead">Lightweight <strong>modular</strong> prototyping framework with OOCSS &amp ITCSS principles;</p>
             </div>
-        </section>
-    </div>
-
-    <div class="splash-blocks">
-        <section class="splash-blocks_item">
-            <div class="splash-blocks_item_wrapper">
-                <h1>aaa</h1>
-            </div>
-        </section>
-        <section class="splash-blocks_item splash-blocks_item--light">
-            <div class="splash-blocks_item_wrapper">
-                <h1>aaa</h1>
-            </div>
-        </section>
-    </div>
-
-    <div class="splash-blocks">
-        <section class="splash-blocks_item splash-blocks_item--dark">
-            <div class="splash-blocks_item_wrapper">
-                <h1 class="display1">Gegroet vreemde.</h1>
-                <hr>
-                <p class="lead">Maak kennis</p>
-            </div>
-        </section>
+        </div>
     </div>
 
 {% endblock %}
@@ -52,7 +30,8 @@
 {% block footer %}{% endblock %}
 
 {% block foot %}
+    {% include "tipicss_packages::/tipicss-core/partials/svg-sprite-injector.twig" %}
+
     <script src="/main/javascripts/index.js"></script>
     <script src="/templates/default/javascripts/index.js"></script>
-    <script src="/groups/frontpage/javascripts/index.js"></script>
 {% endblock %}

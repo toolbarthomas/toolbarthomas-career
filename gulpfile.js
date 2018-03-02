@@ -29,6 +29,7 @@ const NODE_MODULES = {
     path: require('path'),
     runSequence: require('run-sequence').use(GULP),
     sassGlobImporter: require('node-sass-glob-importer'),
+    vueify: require('vueify'),
 };
 
 // Create a revision timesamp of the current date in milliseconds.
@@ -49,6 +50,13 @@ if (!process.env.TIPICSS_SRC || !process.env.TIPICSS_DIST || !process.env.TIPICS
 // Gulp task that cleans up the distribution folder
 // before processing any new streams
 GULP.task('clean', requireGulpTask('clean'));
+
+// Gulp task that will sync every static file in our dist folder
+GULP.task('sync', requireGulpTask('sync'));
+
+// Gulp task that will load default directories defined within the project package.json
+// Defined directories will be synced at the location defined within the .env file
+GULP.task('resolve', requireGulpTask('resolve'));
 
 // Parses all twig documents.
 // Any other asset-related tasks should run before parsing any twig files
@@ -99,6 +107,7 @@ GULP.task('server', requireGulpTask('server'));
 GULP.task('default', function (callback) {
     NODE_MODULES.runSequence(
         'clean',
+        'resolve',
         'twig',
         [
             'stylesheets',

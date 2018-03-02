@@ -1,0 +1,9 @@
+$colors: map-combine($colors, (
+    'body': (
+        'light': #ededed,
+        'dark': #211e25,
+    ),
+    'font': (
+        'light': #9d9fa1
+    )
+));

@@ -22,6 +22,15 @@
         portfolio_items: [
             {
                 title: 'Hockey.nl'
+            },
+            {
+                title: 'tipicss'
+            },
+            {
+                title: 'yeoman'
+            },
+            {
+                title: 'Hockey.nl'
             }
         ]
     } %}
@@ -50,6 +59,10 @@
 {% block foot %}
     {% include "tipicss_packages::/tipicss-core/partials/svg-sprite-injector.twig" %}
 
-    <script src="/main/javascripts/index.js"></script>
-    <script src="/templates/default/javascripts/index.js"></script>
+    <script src="/main/javascripts/jquery.js"></script>
+    <script src="/main/javascripts/jquery-visible.js"></script>
+
+    <script src="/modules/portfolio/javascripts/index.js"></script>
+
+    <script src="/groups/frontpage/javascripts/index.js"></script>
 {% endblock %}

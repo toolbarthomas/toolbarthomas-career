@@ -63,6 +63,8 @@
     "vueify": "^9.4.1"
   },
   "dependencies": {
+    "jquery": "^2.2.4",
+    "jquery-visible": "^1.2.0",
     "tipicss-core": "^0.5.0"
   },
   "shared_directories": [

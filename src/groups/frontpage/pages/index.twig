@@ -1,11 +1,42 @@
 {% extends "tipicss::/templates/default/index.twig" %}
 
+{% block content %}
+
+    {% embed "tipicss::/modules/splash/partials/splash.twig" %}
+
+        {% block splash__main %}
+            <span class="heading-label">Gegroet vreemde!</span>
+            <h1>Mijn naam is Thomas van der Velde en ik ben een front developer</h1>
+            <p class="lead">Do nostrud labore Lorem eiusmod dolore ut amet dolor pariatur magna ullamco.</p>
+            <a href="#portfolio" title="Kom meer over mij te weten">Meer weten!</a>
+        {% endblock %}
+
+        {% block splash__aside %}
+            <img src="http://placehold.it/100x100]" alt="" class="splash__item__image" />
+        {% endblock %}
+
+    {% endembed %}
+
+    {% include "tipicss::/modules/portfolio/partials/portfolio.twig" with {
+        id: 'portfolio',
+        portfolio_items: [
+            {
+                title: 'Hockey.nl'
+            }
+        ]
+    } %}
+
+{% endblock %}
+
+
 {% block head %}
 
     {% include "tipicss_packages::/tipicss-core/partials/fg-loadcss.twig" with {
         stylesheets: [
             '/templates/default/stylesheets/index.css',
             '/groups/frontpage/stylesheets/index.css',
+            '/modules/splash/stylesheets/index.css',
+            '/modules/portfolio/stylesheets/index.css',
         ],
         include_javascript: true
     } %}
@@ -13,19 +44,6 @@
 {% endblock %}
 
 {% block header %}{% endblock %}
-
-{% block content %}
-
-    <div class="valign">
-        <div class="valign__body">
-            <div class="wrapper">
-                <h1 class="display1">Welcome to Tipicss</h1>
-                <p class="lead">Lightweight <strong>modular</strong> prototyping framework with OOCSS &amp ITCSS principles;</p>
-            </div>
-        </div>
-    </div>
-
-{% endblock %}
 
 {% block footer %}{% endblock %}
 

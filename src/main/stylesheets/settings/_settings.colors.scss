@@ -1,6 +1,10 @@
 $colors: map-combine($colors, (
+    'block': (
+        'light': #5e5f61
+    ),
     'body': (
-        'light': #ededed,
+        'base': #eff3f5,
+        'light': #ffffff,
         'dark': #211e25,
     ),
     'font': (

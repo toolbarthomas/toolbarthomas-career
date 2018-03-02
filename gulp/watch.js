@@ -61,7 +61,8 @@ module.exports = (GULP, GULP_PLUGINS, NODE_MODULES, REVISION) => {
         });
 
         var reload = GULP_PLUGINS.watch([
-            process.env.TIPICSS_DIST + '/main/stylesheets/index.css'
+            process.env.TIPICSS_DIST + '/main/stylesheets/index.css',
+            process.env.TIPICSS_DIST + '/**/pages/*.html'
         ], options, function (events, done) {
 
             NODE_MODULES.chalk.yellow('Livereload!');

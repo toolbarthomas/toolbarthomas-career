@@ -1,0 +1,54 @@
+.splash {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column-reverse;
+
+    @include breakpoint(
+        $min-width: viewport('tablet', 'min-width')
+    ) {
+        flex-direction: row;
+        align-items: stretch;
+    }
+}
+
+.splash__item {
+    display: flex;
+    position: relative;
+    flex-grow: 2;
+    padding: box-model('padding', 'large');
+
+    @include breakpoint(
+        $min-width: viewport('tablet', 'min-width')
+    ) {
+        width: 50%;
+        align-items: center;
+
+    }
+}
+
+.splash__item__wrapper {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: wrapper-model('default', 'max-width') / 2;
+
+    .splash__item--aside & {
+        max-width: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.splash__item__image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+}

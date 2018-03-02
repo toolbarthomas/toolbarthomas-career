@@ -1,0 +1,25 @@
+<section class="portfolio" {{ id is not empty ? 'id="' ~ id ~'"' }}>
+
+    <aside class="portfolio__block portfolio__block--aside">
+
+        <h1>Portfolio</h1>
+
+        <nav class="portfolio__block">
+
+        </nav>
+
+    </aside>
+
+    <section class="portfolio__block portfolio__block--main">
+
+        <div class="portfolio__items">
+            {% for portfolio_item in portfolio_items %}
+            <article class="portfolio__item">
+                <h1>{{ portfolio_item.title }}</h1>
+            </article>
+            {% endfor %}
+        </div>
+
+    </section>
+
+</section>

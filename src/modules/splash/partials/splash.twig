@@ -1,0 +1,19 @@
+<section class="splash">
+
+    {% if block('splash__main') is not empty %}
+        <article class="splash__item splash__item--main">
+            <div class="splash__item__wrapper">
+                {{ block('splash__main') }}
+            </div>
+        </article>
+    {% endif %}
+
+    {% if block('splash__aside') is not empty %}
+        <aside class="splash__item splash__item--aside">
+            <div class="splash__item__wrapper">
+                {{ block('splash__aside') }}
+            </div>
+        </aside>
+    {% endif %}
+
+</section>
